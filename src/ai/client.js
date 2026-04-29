@@ -30,7 +30,7 @@ export async function generateCode(cleanedJson, config) {
 
 function buildReactPrompt(cleanedJson, { css, ext }) {
   const cssInstructions = {
-    tailwind: 'Use Tailwind CSS utility classes for all styling. Map colors to closest Tailwind color or use inline style for exact custom colors. Add hover: and active: Tailwind pseudo-class variants on interactive elements (button, a, input) for hover/active states.',
+    tailwind: 'Use Tailwind CSS utility classes for ALL styling. NEVER use inline style={{}} for static values — always use Tailwind arbitrary values instead (e.g. bg-[#0d0d0d], text-[#333], w-[120px], p-[16px], gap-[8px], rounded-[6px]). Only use style={{}} for truly dynamic values passed as props (e.g. style={{ width: props.width }}). Map padding/gap/size to Tailwind arbitrary values, not inline styles. Add hover: and active: Tailwind pseudo-class variants on interactive elements (button, a, input) for hover/active states.',
     cssmodules: 'Use CSS Modules. Output two code blocks: one for the component (.tsx/.jsx) and one for the styles (.module.css). Use camelCase class names. Include :hover and :active rules in the CSS file.',
     plain: 'Use plain inline styles (style={{}} props). Convert all colors and dimensions to inline style objects. Handle hover/active via onMouseEnter/onMouseLeave state.'
   }
@@ -69,13 +69,13 @@ Output the complete React component code:`
 
 function buildVuePrompt(cleanedJson, { css, typescript }) {
   const cssInstructions = {
-    tailwind: 'Use Tailwind CSS utility classes for all styling. Map colors to closest Tailwind color or use :style binding for exact custom colors. Add hover: and active: Tailwind pseudo-class variants on interactive elements.',
+    tailwind: 'Use Tailwind CSS utility classes for ALL styling. NEVER use :style bindings for static values — always use Tailwind arbitrary values instead (e.g. bg-[#0d0d0d], text-[#333], w-[120px], p-[16px], gap-[8px], rounded-[6px]). Only use :style for truly dynamic values passed as props (e.g. :style="{ width: props.width }"). Map padding/gap/size to Tailwind arbitrary values, not inline styles. Add hover: and active: Tailwind pseudo-class variants on interactive elements.',
     cssmodules: 'Use scoped <style> block with CSS classes. Use camelCase class names in <script> and kebab-case in <template>. Include :hover and :active rules.',
     plain: 'Use scoped <style> block with plain CSS. Convert all Figma colors and dimensions to CSS properties. Include :hover and :active rules.'
   }
 
   const tsNote = typescript
-    ? 'Use TypeScript in <script setup lang="ts">. Define props with defineProps<{...}>() and interfaces.'
+    ? 'Use TypeScript in <script setup lang="ts">. Define props with interface + withDefaults(defineProps<Props>(), { ... }) pattern. NEVER pass default values directly to defineProps<Props>() — always use withDefaults wrapper.'
     : 'Use JavaScript in <script setup>. Define props with defineProps({}).'
 
   return `You are a senior frontend developer. Convert the following Figma component structure into a production-ready Vue 3 component using <script setup> Composition API syntax.
