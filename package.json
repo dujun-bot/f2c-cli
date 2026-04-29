@@ -1,0 +1,49 @@
+{
+  "name": "f2c-cli",
+  "version": "0.1.2",
+  "description": "Convert Figma designs to React/Vue components automatically via AI",
+  "type": "module",
+  "bin": {
+    "f2c": "./bin/f2c.js"
+  },
+  "scripts": {
+    "start": "node bin/f2c.js",
+    "dev": "node --watch bin/f2c.js"
+  },
+  "keywords": [
+    "figma",
+    "react",
+    "vue",
+    "tailwind",
+    "code-generation",
+    "ai",
+    "cli",
+    "design-to-code",
+    "figma-to-code",
+    "component"
+  ],
+  "author": "dujun <duziteng1987@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/dujun-bot/f2c#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dujun-bot/f2c.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dujun-bot/f2c/issues"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.24.0",
+    "axios": "^1.6.0",
+    "chalk": "^5.3.0",
+    "commander": "^12.0.0",
+    "inquirer": "^9.2.0",
+    "openai": "^4.40.0",
+    "ora": "^8.0.0",
+    "prettier": "^3.2.0",
+    "prettier-plugin-vue": "^1.1.6"
+  }
+}

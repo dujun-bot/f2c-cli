@@ -1,0 +1,7 @@
+# 不发布到 npm 的文件
+.f2c-links.json
+test-figma.js
+.env
+.env.*
+*.log
+.DS_Store
