@@ -154,7 +154,7 @@ export async function linkCommand(options) {
   } else {
     // 免费版：跳过 GitHub 配置，输出到本地
     console.log(chalk.gray('\n  Free plan: code will be saved locally (no GitHub PR)'))
-    console.log(chalk.gray('  Upgrade to Pro for auto GitHub PR: https://crazy-code.lemonsqueezy.com/checkout/buy/c9a7e28f-e69c-4431-8b88-2be69716635f\n'))
+    console.log(chalk.gray('  Upgrade to Pro for auto GitHub PR: https://duziteng.gumroad.com/l/f2c-pro\n'))
   }
 
   // ── 保存 link ──
@@ -187,7 +187,7 @@ export async function linkCommand(options) {
   if (!status.isPro) {
     const remaining = FREE_LIMIT_LINKS - linksData.links.length
     if (remaining === 0) {
-      console.log(chalk.yellow(`\n  Free plan: max ${FREE_LIMIT_LINKS} links reached. Upgrade for unlimited: https://crazy-code.lemonsqueezy.com/checkout/buy/c9a7e28f-e69c-4431-8b88-2be69716635f`))
+      console.log(chalk.yellow(`\n  Free plan: max ${FREE_LIMIT_LINKS} links reached. Upgrade for unlimited: https://duziteng.gumroad.com/l/f2c-pro`))
     } else {
       console.log(chalk.gray(`\n  Free plan: ${remaining} link slot${remaining > 1 ? 's' : ''} remaining`))
     }

@@ -215,7 +215,7 @@ export function requirePro(featureName) {
   if (!status.isPro) {
     const e = new Error(
       `"${featureName}" is a Pro feature.\n` +
-      `  Upgrade at https://crazy-code.lemonsqueezy.com/checkout/buy/c9a7e28f-e69c-4431-8b88-2be69716635f\n` +
+      `  Upgrade at https://duziteng.gumroad.com/l/f2c-pro\n` +
       `  Then run: f2c license activate <your-key>`
     )
     e.isLicenseError = true
@@ -233,7 +233,7 @@ export function checkLinkLimit(currentCount) {
     const e = new Error(
       `Free plan is limited to ${FREE_LIMIT_LINKS} links.\n` +
       `  You currently have ${currentCount} links.\n` +
-      `  Upgrade to Pro for unlimited links: https://crazy-code.lemonsqueezy.com/checkout/buy/c9a7e28f-e69c-4431-8b88-2be69716635f\n` +
+      `  Upgrade to Pro for unlimited links: https://duziteng.gumroad.com/l/f2c-pro\n` +
       `  Then run: f2c license activate <your-key>`
     )
     e.isLicenseError = true

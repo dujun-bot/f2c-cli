@@ -40,7 +40,7 @@ function showStatus() {
   } else {
     console.log(chalk.yellow('  License: Free'))
     console.log(chalk.gray('  Limits:  3 links, no f2c watch'))
-    console.log(chalk.cyan('  Upgrade: https://crazy-code.lemonsqueezy.com/checkout/buy/c9a7e28f-e69c-4431-8b88-2be69716635f'))
+    console.log(chalk.cyan('  Upgrade: https://duziteng.gumroad.com/l/f2c-pro'))
     console.log(chalk.gray('  Activate: f2c license activate <your-key>'))
   }
   console.log('')
