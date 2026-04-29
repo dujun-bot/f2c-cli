@@ -1,6 +1,6 @@
 {
   "name": "f2c-cli",
-  "version": "0.1.2",
+  "version": "0.1.4",
   "description": "Convert Figma designs to React/Vue components automatically via AI",
   "type": "module",
   "bin": {
