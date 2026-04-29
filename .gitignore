@@ -1,0 +1,6 @@
+node_modules/
+.f2c-links.json
+src/components/
+~/.f2c/
+*.log
+.DS_Store
